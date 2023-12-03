@@ -57,7 +57,7 @@ VALIDATE $? "unzinping catalogue"
 npm install 
 VALIDATE $? "npm install "
 
-cp catalogue.service /etc/systemd/system/catalogue.service
+cp /home/centos/Shell/catalogue.service /etc/systemd/system/catalogue.service
 VALIDATE $? "coping catalogue.service"
 
 systemctl daemon-reload
@@ -75,4 +75,4 @@ VALIDATE $? "copying mongo.repo"
 yum install mongodb-org-shell -y
 VALIDATE $? "install mongodb-org-shell"
 
-#mongo --host MONGODB-SERVER-IPADDRESS </app/schema/catalogue.js
+mongo --host 172.31.45.82 </app/schema/catalogue.js
