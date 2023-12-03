@@ -1,8 +1,6 @@
 #!/bin/bash
 DATE=$(date +%x-%T)
 USER_ID=$(id -u)
-USER=$(id roboshop)
-DIRECTORY=$([-d "/app"])
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
