@@ -12,7 +12,7 @@ then
     exit1
 fi
 VALIDATE(){
-    if [$1 -ne 0 ]
+    if [ $1 -ne 0 ]
     then
         echo -e "$R $2....FAILED.$N"
         exit1
