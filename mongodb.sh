@@ -22,7 +22,7 @@ VALIDATE(){
 
 cp mongo.repo /etc/yum.repos.d/mongo.repo 
 
-VALIDATE $? "copyin gmongo.repo"
+VALIDATE $? "copying mongo.repo"
 
 yum install mongodb-org -y 
 VALIDATE $? "install mongodb-org"
