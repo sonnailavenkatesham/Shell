@@ -5,7 +5,7 @@ DATE=$(date +%x)
 
 
 
-copy /home/centos/Shell/mongo.repo /etc/yum.repos.d/mongo.repo
+cp /home/centos/Shell/mongo.repo /etc/yum.repos.d/mongo.repo
 
 yum install mongodb-org -y
 
