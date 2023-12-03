@@ -1,7 +1,7 @@
 #!/bin/bash
 DATE=$(date +%x)
 USER_ID=$(id -u)
-LOG_FILE=/tmp/$0-$DATE.log
+LOG_FILE=/home/centos/Shell/tmp/$0-$DATE-log
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
