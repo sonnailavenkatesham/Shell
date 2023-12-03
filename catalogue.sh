@@ -69,7 +69,7 @@ VALIDATE $? "enable catalogue"
 systemctl start catalogue
 VALIDATE $? "start catalogue"
 
-cp mongo.repo /etc/yum.repos.d/mongo.repo
+cp /home/centos/Shell/mongo.repo /etc/yum.repos.d/mongo.repo
 VALIDATE $? "copying mongo.repo"
 
 yum install mongodb-org-shell -y
