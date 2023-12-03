@@ -9,11 +9,13 @@ N="\e[0m"
 if [ $USER_ID -ne 0 ]
 then
     echo -e "$R ERROR..You are not root user $N"
+    exit1
 fi
 VALIDATE(){
     if [$1 -ne 0 ]
     then
         echo -e "$R $2....FAILED.$N"
+        exit1
     else    
         echo -e "$G $2....SUCCESSFUL. $N"
 }
