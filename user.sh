@@ -2,7 +2,7 @@
 DATE=$(date +%x-%T)
 USER_ID=$(id -u)
 USER=$(id roboshop)
-DIRECTORY=$([ -d "/app" ])
+#DIRECTORY=$([-d "/app" ])
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
@@ -38,11 +38,11 @@ else
     echo -e "$Y user roboshop already exits $N"
 fi
 
-if [ $DIRECTORY -ne 0 ]
+if [ -d "/app" ]
 then
-mkdir /app
-else
     echo -e "$Y app directory already exist$N"
+else
+    mkdir /app
 fi
 
 curl -L -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip
