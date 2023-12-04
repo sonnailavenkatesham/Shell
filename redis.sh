@@ -2,9 +2,9 @@
 DATE=$(date +%x-%T)
 USER_ID=$(id -u)
 R="\e[31m"
-G="\e[31m"
-Y="\e[31m"
-N="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 if [ $USER_ID -ne 0 ]
 then    
     echo -e "$R ERROR: You are not user $N"
