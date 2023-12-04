@@ -33,14 +33,14 @@ VALIDATE $? "install nodejs"
 
 if [ $USER -ne 0 ]
 then
-    useradd roboshop
+useradd roboshop
 else
     echo -e "$Y user roboshop already exits $N"
 fi
 
 if [ $DIRECTORY -ne 0 ]
 then
-    mkdir /app
+mkdir /app
 else
     echo -e "$Y app directory already exist$N"
 fi
