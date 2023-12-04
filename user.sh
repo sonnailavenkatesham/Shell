@@ -69,7 +69,7 @@ VALIDATE $? "enable user"
 systemctl start user
 VALIDATE $? "start user"
 
-cp /home/centos/Shell/monogo.repo /etc/yum.repos.d/mongo.repo
+cp /home/centos/Shell/mongo.repo /etc/yum.repos.d/mongo.repo
 VALIDATE $? "copying mongo.repo"
 
 yum install mongodb-org-shell -y
