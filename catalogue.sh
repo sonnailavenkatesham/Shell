@@ -37,9 +37,9 @@ else
     echo -e "$Y user roboshop already exist $N"
 fi
 
-if [ -d "$DIRECTORY" ] 
+if [ -d "/app" ] 
 then
-    echo -e " $Y $DIRECTORY does exist $N"
+    echo -e " $Y /app does exist $N"
 else
     mkdir /app
 fi
@@ -75,5 +75,5 @@ VALIDATE $? "copying mongo.repo"
 yum install mongodb-org-shell -y
 VALIDATE $? "install mongodb-org-shell"
 
-mongo --host "172.31.32.85" </app/schema/catalogue.js
+mongo --host mongodb.venkateshamsonnalia143.online </app/schema/catalogue.js
 VALIDATE $? "connecting to host server"

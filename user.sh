@@ -76,5 +76,5 @@ VALIDATE $? "copying mongo.repo"
 yum install mongodb-org-shell -y
 VALIDATE $? "install mongodb-org-shell"
 
-mongo --host "172.31.32.85" </app/schema/user.js
+mongo --host mongodb.venkateshamsonnalia143.online </app/schema/user.js
 VALIDATE $? "conneting to host"
