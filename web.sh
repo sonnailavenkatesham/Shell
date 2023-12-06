@@ -27,8 +27,8 @@ VALIDATE $? "install nginx"
 systemctl enable nginx
 VALIDATE $? "enable nginx"
 
-# systemctl start nginx
-# VALIDATE $? "start nginx"
+systemctl restart nginx
+VALIDATE $? "start nginx"
 
 rm -rf /usr/share/nginx/html/*
 VALIDATE $? "removing html/*"
