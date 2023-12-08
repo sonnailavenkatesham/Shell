@@ -10,12 +10,14 @@ USER=$(id roboshop)
 if [ $USER_ID -ne 0 ]
 then
     echo -e "$R ERROR: You are not root user$N"
+    exit 1
 fi
 
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
         echo -e "$R $2....FAILED$N"
+        exit 1
     else
         echo -e "$G $2.....SUCCESSFULL$N"
     fi

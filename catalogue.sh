@@ -2,7 +2,7 @@
 DATE=$(date +%x-%T)
 USER_ID=$(id -u)
 USER=$(id roboshop)
-DIRECTORY=$([-d "/app"])
+DIRECTORY=$(ls /app)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
@@ -40,11 +40,11 @@ else
     echo -e "$Y user roboshop already exist $N"
 fi
 
-if [ -d "/app" ] 
+if [ $DIRECTORY -ne  ] 
 then
-    echo -e " $Y /app does exist $N"
+    mkdir /app 
 else
-    mkdir /app
+    echo -e " $Y /app does exist $N"
 fi
 
 
