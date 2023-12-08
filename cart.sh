@@ -50,6 +50,8 @@ VALIDATE $? "changing to app directory"
 unzip /tmp/cart.zip
 VALIDATE $? "Unzipping cart component "
 
+cp /home/centos/Shell/cart.service /etc/systemd/system/cart.service
+
 npm install 
 VALIDATE $? "npm install"
 
