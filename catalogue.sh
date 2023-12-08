@@ -33,14 +33,16 @@ VALIDATE $? "module enable nodejs:18"
 dnf install nodejs -y
 VALIDATE $? "install nodejs"
 
-if [ $USER -ne 0 ]
+id roboshop
+if [ $? -ne 0 ]
 then
     useradd roboshop
-else
-    echo -e "$Y user roboshop already exist $N"
+else    
+    echo -e "$Y user roboshop is already exist $N"
 fi
 
-if [ $DIRECTORY -ne 0 ] 
+ls /app
+if [ $? -ne 0 ] 
 then
     mkdir /app 
 else
