@@ -1,8 +1,8 @@
 #!/bin/bash
 DATE=$(date +%x-%T)
 USER_ID=$(id -u)
-USER=$(id roboshop)
-DIRECTORY=$(ls /app)
+USER_NAME=$(id "roboshop")
+APP=$(ls "/app")
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
@@ -34,15 +34,14 @@ dnf install nodejs -y
 VALIDATE $? "install nodejs"
 
 id roboshop
-if [ $? -ne 0 ]
+if [ $USER_NAME -ne 0 ]
 then
     useradd roboshop
 else    
     echo -e "$Y user roboshop is already exist $N"
 fi
 
-ls /app
-if [ $? -ne 0 ] 
+if [ $APP -ne 0 ] 
 then
     mkdir /app 
 else
