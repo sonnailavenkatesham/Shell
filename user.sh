@@ -25,8 +25,11 @@ VALIDATE(){
     fi
 }
 
-curl -sL https://rpm.nodesource.com/setup_lts.x | bash
-VALIDATE $? "RPM Node setup"
+dnf module disable nodejs -y
+VALIDATE $? "module disable nodejs"
+
+dnf module enable nodejs:18 -y
+VALIDATE $? "module enable nodejs:18"
 
 yum install nodejs -y
 VALIDATE $? "install nodejs"
