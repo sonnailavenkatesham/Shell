@@ -40,7 +40,7 @@ else
     echo -e "$Y user roboshop already exist $N"
 fi
 
-if [ $DIRECTORY -ne  ] 
+if [ $DIRECTORY -ne 0 ] 
 then
     mkdir /app 
 else
