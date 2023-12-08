@@ -37,15 +37,15 @@ VALIDATE $? "install nodejs"
 if [ $USER_NAME -ne 0 ]
 then
     useradd roboshop
-else
-    echo -e "$Y user roboshop already exits $N"
+else    
+    echo -e "$Y user roboshop is already exist $N"
 fi
 
-if [ $APP -ne 0 ]
+if [ $APP -ne 0 ] 
 then
-    mkdir /app
+    mkdir /app 
 else
-    echo -e "$Y app directory already exist$N"
+    echo -e " $Y /app does exist $N"
 fi
 
 curl -L -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip

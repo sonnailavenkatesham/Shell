@@ -5,7 +5,8 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-USER=$(id roboshop)
+USER_NAME=$(id "roboshop")
+APP=$(ls "/app")
 
 if [ $USER_ID -ne 0 ]
 then
@@ -23,24 +24,27 @@ VALIDATE(){
     fi
 }
 
-curl -sL https://rpm.nodesource.com/setup_lts.x | bash
-VALIDATE $? "Downloading npm setup"
+dnf module disable nodejs -y
+VALIDATE $? "module disable nodejs"
+
+dnf module enable nodejs:18 -y
+VALIDATE $? "module enable nodejs:18"
 
 yum install nodejs -y
 VALIDATE $? "install nodejs"
 
-if [ $USER -ne 0 ]
+if [ $USER_NAME -ne 0 ]
 then
-    adduser roboshop
-else
-    echo -e "$Y user roboshop already exists$N"
+    useradd roboshop
+else    
+    echo -e "$Y user roboshop is already exist $N"
 fi
 
-if [ -d "/app" ]
-then    
-    echo -e "$R/app directory already exist$N"
+if [ $APP -ne 0 ] 
+then
+    mkdir /app 
 else
-    mkdir /app
+    echo -e " $Y /app does exist $N"
 fi
 
 curl -L -o /tmp/cart.zip https://roboshop-builds.s3.amazonaws.com/cart.zip
