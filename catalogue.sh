@@ -79,5 +79,5 @@ VALIDATE $? "copying mongo.repo"
 yum install mongodb-org-shell -y
 VALIDATE $? "install mongodb-org-shell"
 
-mongo --host 172.31.36.126 < /app/schema/catalogue.js
+mongo --host 172.31.28.233 < /app/schema/catalogue.js
 VALIDATE $? "connecting to host server"
