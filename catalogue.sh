@@ -33,7 +33,6 @@ VALIDATE $? "module enable nodejs:18"
 dnf install nodejs -y
 VALIDATE $? "install nodejs"
 
-id roboshop
 if [ $USER_NAME -ne 0 ]
 then
     useradd roboshop
