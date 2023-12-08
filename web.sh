@@ -21,7 +21,7 @@ VALIDATE(){
     fi
 }
 
-yum install nginx -y
+dnf install nginx -y
 VALIDATE $? "install nginx"
 
 systemctl enable nginx
@@ -45,5 +45,5 @@ VALIDATE $? "Unziping web"
 cp /home/centos/Shell/roboshop.conf /etc/nginx/default.d/roboshop.conf 
 VALIDATE $? "copying roboshop.conf"
 
-systemctl restart nginx 
+systemctl restart nginx  
 VALIDATE $? "restart nginx"
