@@ -1,7 +1,7 @@
 #!/bin/bash
 DATE=$(date +%x-%T)
 USER_ID=$(id -u)
-USER=$(id "roboshop")
+USER_NAME=$(id "roboshop")
 APP=$(ls "/app")
 R="\e[31m"
 G="\e[32m"
@@ -34,9 +34,9 @@ VALIDATE $? "module enable nodejs:18"
 yum install nodejs -y
 VALIDATE $? "install nodejs"
 
-if [ $USER -ne 0 ]
+if [ $USER_NAME -ne 0 ]
 then
-useradd roboshop
+    useradd roboshop
 else
     echo -e "$Y user roboshop already exits $N"
 fi
